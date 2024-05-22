@@ -1,0 +1,50 @@
+//must import ArrayList class to use
+//arrays do not need anything imported to use
+import java.util.ArrayList;  
+
+public class Main 
+{
+  public static void main(String[] args) 
+  {
+    //declaration and initialization
+    //arrays require a size to initialize
+    int[] numbers = new int[10];  
+    //arraylists do not require a size 
+    ArrayList<Double> decimalNums = new ArrayList<Double>(); 
+    
+    /*
+    when filling with user input, or a predictable input, you can use loops to make it easier
+    for loops are easier to fill arrays, or array lists that you know the size of, since there is a specific number of elements
+    since arraylists don't always have a specific number of elements, it can be easier to use a while loop
+    the programmer can also fill an array normally with curly braces
+    for array lists, use the .add() method
+    i will be filling the array with numbers 1-10, and then the arraylist with numbers 1.1-11.0
+    */
+    for(int i = 0; i < numbers.length; i++)
+    {
+      numbers[i] = i + 1; //when adding the array element, you can just use brackets and the index and then treat it like a variable
+    }
+    //arraylists cannot store primitive data types, so we must convert the double to Double through the use of a wrapper class variable
+    double count = 1.10; 
+    Double wrapper;
+    while(count < 12)
+    {
+      wrapper = count;
+      decimalNums.add(wrapper); //when adding the arraylist element, use the .add() method
+      count += 1.10;
+    }
+
+    /*
+    for printing, much like with filling the array and arraylist, it is helpful to use loops
+    at this point both the array and arraylist have a set amount of elements, so you can use for loops for both
+    */
+    for(int i = 0; i < numbers.length; i++)
+    {
+      System.out.println(numbers[i]);      
+    }
+    for(int j = 0; j < decimalNums.size(); j++)
+    {
+      System.out.printf("\n%.1f", decimalNums.get(j));      
+    }
+  }
+}
